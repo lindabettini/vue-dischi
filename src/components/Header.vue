@@ -11,7 +11,7 @@ export default {
 <style scoped lang="scss">
 header {
 	height: 70px;
-	background-color: grey;
+	background-color: rgb(46, 58, 70);
 	padding: 0 40px;
 	display: flex;
 	align-items: center;

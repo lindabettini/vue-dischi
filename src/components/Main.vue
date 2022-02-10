@@ -2,7 +2,7 @@
 	<main>
 		<section id="albums" class="container">
 			<div class="albums-list row">
-				<div v-for="album in albums" :key="album.title" class="col-5 col-md-3 col-lg-2">
+				<div v-for="album in albums" :key="album.title" class="col-3">
 					<AlbumsCard :poster="album.poster" :title="album.title" :author="album.author" :year="album.year" />
 				</div>
 			</div>
@@ -30,4 +30,8 @@ export default {
 };
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.albums-list {
+	padding: 30px 100px;
+}
+</style>

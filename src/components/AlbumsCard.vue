@@ -16,7 +16,10 @@ export default {
 
 <style scoped>
 .album-card {
-	background-color: rgb(30, 45, 59);
+	background-color: rgb(46, 58, 70);
+	height: 350px;
+	max-width: 200px;
+	margin: 20px 0;
 }
 h4 {
 	text-transform: uppercase;

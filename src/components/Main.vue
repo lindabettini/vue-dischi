@@ -16,7 +16,7 @@ export default {
 		};
 	},
 	created() {
-		axios.get("https://flynn.boolean.careers/exercises/api/array/music/").then((res) => {
+		axios.get("https://flynn.boolean.careers/exercises/api/array/music").then((res) => {
 			this.albums = res.data.response;
 		});
 	},

@@ -10,7 +10,7 @@
 <script>
 export default {
 	name: "AlbumsCard",
-	props: ["poster", "title", "author", "year"],
+	props: ["poster", "title", "author", "year", "genre"],
 };
 </script>
 

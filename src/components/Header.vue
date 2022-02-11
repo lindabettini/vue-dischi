@@ -5,15 +5,30 @@
 				<img src="../assets/img/logo.png" alt="" />
 			</div>
 			<div class="col-6 d-flex align-items-center justify-content-end">
-				<input class="align-self-end" type="select" />
+				<label for="genre">Choose a genre:</label>
+				<select name="genre" id="select-genre" class="align-self-end">
+					<option v-bind="genre[1]"></option>
+				</select>
 			</div>
 		</div>
 	</header>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
 	name: "Header",
+	data() {
+		return {
+			genre: [],
+		};
+	},
+	created() {
+		axios.get("https://flynn.boolean.careers/exercises/api/array/music").then((res) => {
+			this.genre = res.data.response.genre;
+		});
+	},
 };
 </script>
 

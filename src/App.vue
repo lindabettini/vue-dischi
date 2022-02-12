@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<Header :albums="albums" @updateValue="updateValue" />
-		<Main :albums="albums" />
+		<Main :albums="albums" :selectedValueChoose="selectedValueChoose" />
 	</div>
 </template>
 

@@ -3,7 +3,7 @@
 		<section id="albums" class="container">
 			<div class="albums-list row">
 				<div v-for="album in albums" :key="album.title" class="col-3">
-					<AlbumsCard :poster="album.poster" :title="album.title" :author="album.author" :year="album.year" />
+					<AlbumsCard :album="album" />
 				</div>
 			</div>
 		</section>
@@ -11,22 +11,11 @@
 </template>
 
 <script>
-import axios from "axios";
-
 import AlbumsCard from "./AlbumsCard.vue";
 export default {
 	name: "Main",
 	components: { AlbumsCard },
-	data() {
-		return {
-			albums: [],
-		};
-	},
-	created() {
-		axios.get("https://flynn.boolean.careers/exercises/api/array/music").then((res) => {
-			this.albums = res.data.response;
-		});
-	},
+	props: ["albums"],
 };
 </script>
 

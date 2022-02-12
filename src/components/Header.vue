@@ -5,9 +5,9 @@
 				<img src="../assets/img/logo.png" alt="" />
 			</div>
 			<div class="col-6 d-flex align-items-center justify-content-end">
-				<label for="genre">Choose a genre:</label>
-				<select name="genre" id="select-genre" class="align-self-end">
-					<option v-bind="genre[1]"></option>
+				<label>Choose a genre:</label>
+				<select id="select-genre" class="align-self-end">
+					<option value="rock"></option>
 				</select>
 			</div>
 		</div>
@@ -15,20 +15,9 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
 	name: "Header",
-	data() {
-		return {
-			genre: [],
-		};
-	},
-	created() {
-		axios.get("https://flynn.boolean.careers/exercises/api/array/music").then((res) => {
-			this.genre = res.data.response.genre;
-		});
-	},
+	props: ["albums"],
 };
 </script>
 

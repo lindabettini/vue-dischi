@@ -7,7 +7,7 @@
 			<div class="col-6 d-flex align-items-center justify-content-end">
 				<label>Choose a genre:</label>
 				<select id="select-genre" class="align-self-end">
-					<option value="rock"></option>
+					<option v-for="(genre, index) in getUnicGenre()" :key="index" :value="genre">{{ genre }}</option>
 				</select>
 			</div>
 		</div>
@@ -18,6 +18,20 @@
 export default {
 	name: "Header",
 	props: ["albums"],
+	data() {
+		return {};
+	},
+	methods: {
+		getUnicGenre() {
+			const genres = [];
+			this.albums.forEach((album) => {
+				if (!genres.includes(album.genre)) {
+					genres.push(album.genre);
+				}
+			});
+			return genres;
+		},
+	},
 };
 </script>
 

@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<Header :albums="albums" />
+		<Header :albums="albums" @updateValue="updateValue" />
 		<Main :albums="albums" />
 	</div>
 </template>
@@ -18,8 +18,14 @@ export default {
 	},
 	data() {
 		return {
+			selectedValueChoose: "",
 			albums: [],
 		};
+	},
+	methods: {
+		updateValue(value) {
+			this.selectedValueChoose = value;
+		},
 	},
 	created() {
 		axios.get("https://flynn.boolean.careers/exercises/api/array/music").then((res) => {
